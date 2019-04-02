@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p id="output"></p>
+	<button onclick="const loop = new For(1,20);loop.evenOdd();loop.output();">Action</button>
+</body>
+
+</html>
+<script type="text/javascript">
+	const For = class {
+		constructor(start,end){
+			this.start = Number(start);
+			this.end = Number(end);
+			this.arr =[];
+		}
+		runFor(){
+			for (let i = this.start; i < this.end; i++) {
+				this.arr.push(i);
+			}
+		}
+		evenOdd(){
+			for (let i = this.start; i < this.end; i++) {
+				if (i%2==0) {
+					this.arr.push(i*3);
+				} else if (i%3==0) {
+					this.arr.push(i/2);
+				}else{
+					this.arr.push(i);
+				}
+			}
+		}
+		output(){
+			document.getElementById('output').innerHTML = this.arr;
+		}
+	}
+	//for 0-20 even number * 3, odd / 2
+</script>
